@@ -121,3 +121,8 @@ This skills repository is designed to work with the [SCB Open Data MCP Server](h
 ## License
 
 This repository and its skills are licensed under the MIT License. The statistical data accessed through these skills is subject to Statistics Sweden's terms of use.
+
+## Disclaimer
+
+This is an unofficial prototype. The workflows were generated using AI while using official documents and a sampling of tables fetched from SCB's open data as context.
+A thorough rigorous verification test is recommended before using it in any serious application.
