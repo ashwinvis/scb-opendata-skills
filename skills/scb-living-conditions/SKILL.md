@@ -22,56 +22,89 @@ This skill provides workflows for accessing Statistics Sweden's living condition
 ### Retrieve Income Distribution Statistics
 ```
 1. scb_opendata_mcp_search_tables(query="income", lang="en")
-2. scb_opendata_mcp_get_table_info(table_id="TAB6240")
-3. scb_opendata_mcp_get_table_data(table_id="TAB6240", filters={"inkomstgrupp": "låg,medel,hög", "år": "2024"})
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB6240")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB6240")
+4. scb_opendata_mcp_get_table_data(table_id="TAB6240", selection=[
+    {"variableCode": "inkomstgrupp", "valueCodes": ["låg", "medel", "hög"]},
+    {"variableCode": "år", "valueCodes": ["2024"]}
+])
 ```
 
 ### Analyze Education Levels by Region
 ```
 1. scb_opendata_mcp_search_tables(query="education", lang="en")
-2. scb_opendata_mcp_get_table_info(table_id="TAB4500")
-3. scb_opendata_mcp_get_table_data(table_id="TAB4500", filters={"region": "01", "utbildningsnivå": "grund,sekundär,tertiär", "år": "2024"})
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB4500")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB4500")
+4. scb_opendata_mcp_get_table_data(table_id="TAB4500", selection=[
+    {"variableCode": "region", "valueCodes": ["01"]},
+    {"variableCode": "utbildningsnivå", "valueCodes": ["grund", "sekundär", "tertiär"]},
+    {"variableCode": "år", "valueCodes": ["2024"]}
+])
 ```
 
 ### Examine Health Indicators and Life Expectancy
 ```
 1. scb_opendata_mcp_search_tables(query="health", lang="en")
-2. scb_opendata_mcp_get_table_info(table_id="TAB6489")
-3. scb_opendata_mcp_get_table_data(table_id="TAB6489", filters={"kön": "1,2", "åldersgrupp": "alla", "år": "2024"})
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB6489")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB6489")
+4. scb_opendata_mcp_get_table_data(table_id="TAB6489", selection=[
+    {"variableCode": "kön", "valueCodes": ["1", "2"]},
+    {"variableCode": "åldersgrupp", "valueCodes": ["alla"]},
+    {"variableCode": "år", "valueCodes": ["2024"]}
+])
 ```
 
 ### Retrieve Gender Equality Statistics
 ```
 1. scb_opendata_mcp_search_tables(query="gender equality", lang="en")
-2. scb_opendata_mcp_get_table_info(table_id="TAB5629")
-3. scb_opendata_mcp_get_table_data(table_id="TAB5629", filters={"område": "utbildning,sysselsättning,inkomst", "år": "2024"})
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB5629")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB5629")
+4. scb_opendata_mcp_get_table_data(table_id="TAB5629", selection=[
+    {"variableCode": "område", "valueCodes": ["utbildning", "sysselsättning", "inkomst"]},
+    {"variableCode": "år", "valueCodes": ["2024"]}
+])
 ```
 
 ### Analyze IT Usage and Digital Divide
 ```
 1. scb_opendata_mcp_search_tables(query="IT usage", lang="en")
-2. scb_opendata_mcp_get_table_info(table_id="TAB4672")
-3. scb_opendata_mcp_get_table_data(table_id="TAB4672", filters={"åldersgrupp": "16-24,25-64,65+", "år": "2024"})
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB4672")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB4672")
+4. scb_opendata_mcp_get_table_data(table_id="TAB4672", selection=[
+    {"variableCode": "åldersgrupp", "valueCodes": ["16-24", "25-64", "65+"]},
+    {"variableCode": "år", "valueCodes": ["2024"]}
+])
 ```
 
 ### Examine Child and Family Statistics
 ```
 1. scb_opendata_mcp_search_tables(query="children", lang="en")
-2. scb_opendata_mcp_get_table_info(table_id="TAB4503")
-3. scb_opendata_mcp_get_table_data(table_id="TAB4503", filters={"familjetyp": "ensam,ensam_med_barn", "år": "2024"})
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB4503")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB4503")
+4. scb_opendata_mcp_get_table_data(table_id="TAB4503", selection=[
+    {"variableCode": "familjetyp", "valueCodes": ["ensam", "ensam_med_barn"]},
+    {"variableCode": "år", "valueCodes": ["2024"]}
+])
 ```
 
 ### Analyze Poverty and Social Exclusion Indicators
 ```
 1. scb_opendata_mcp_search_tables(query="poverty", lang="en")
-2. scb_opendata_mcp_get_table_info(table_id="TAB6240")
-3. scb_opendata_mcp_get_table_data(table_id="TAB6240", filters={"fattigdomsindikator": "låg_inkomst,material_deprivation", "år": "2024"})
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB6240")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB6240")
+4. scb_opendata_mcp_get_table_data(table_id="TAB6240", selection=[
+    {"variableCode": "fattigdomsindikator", "valueCodes": ["låg_inkomst", "material_deprivation"]},
+    {"variableCode": "år", "valueCodes": ["2024"]}
+])
 ```
 
 ### Compare Living Conditions Across Regions
 ```
 1. scb_opendata_mcp_search_tables(query="income", lang="en")
-2. scb_opendata_mcp_get_table_info(table_id="TAB6240")
-3. scb_opendata_mcp_get_codelist(codescb_opendata_mcp_list_id="Region")
-4. scb_opendata_mcp_get_table_data(table_id="TAB6240", filters={"region": "01,02,03", "år": "2024"})
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB6240")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB6240")
+4. scb_opendata_mcp_get_table_data(table_id="TAB6240", selection=[
+    {"variableCode": "region", "valueCodes": ["01", "02", "03"]},
+    {"variableCode": "år", "valueCodes": ["2024"]}
+])
 ```

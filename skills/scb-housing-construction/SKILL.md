@@ -21,57 +21,88 @@ This skill provides workflows for accessing Statistics Sweden's housing and cons
 ### Retrieve Current Building Permit Statistics
 ```
 1. scb_opendata_mcp_search_tables(query="building permits", lang="en")
-2. scb_opendata_mcp_get_table_info(table_id="TAB513")
-3. scb_opendata_mcp_get_table_data(table_id="TAB513", filters={"byggnadstyp": "bostadshus", "år": "2024"})
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB513")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB513")
+4. scb_opendata_mcp_get_table_data(table_id="TAB513", selection=[
+    {"variableCode": "byggnadstyp", "valueCodes": ["bostadshus"]},
+    {"variableCode": "år", "valueCodes": ["2024"]}
+])
 ```
 
 ### Analyze Housing Start Trends by Region
 ```
 1. scb_opendata_mcp_search_tables(query="housing starts", lang="en")
-2. scb_opendata_mcp_get_table_info(table_id="TAB513")
-3. scb_opendata_mcp_get_table_data(table_id="TAB513", filters={"region": "01", "år": "2020-2024"})
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB513")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB513")
+4. scb_opendata_mcp_get_table_data(table_id="TAB513", selection=[
+    {"variableCode": "region", "valueCodes": ["01"]},
+    {"variableCode": "år", "valueCodes": ["2020", "2021", "2022", "2023", "2024"]}
+])
 ```
 
 ### Examine Housing Completion Rates
 ```
 1. scb_opendata_mcp_search_tables(query="housing completions", lang="en")
-2. scb_opendata_mcp_get_table_info(table_id="TAB4384")
-3. scb_opendata_mcp_get_table_data(table_id="TAB4384", filters={"bostadstyp": "flerbostadshus", "år": "2024"})
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB4384")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB4384")
+4. scb_opendata_mcp_get_table_data(table_id="TAB4384", selection=[
+    {"variableCode": "bostadstyp", "valueCodes": ["flerbostadshus"]},
+    {"variableCode": "år", "valueCodes": ["2024"]}
+])
 ```
 
 ### Retrieve Real Estate Price Index
 ```
 1. scb_opendata_mcp_search_tables(query="real estate prices", lang="en")
-2. scb_opendata_mcp_get_table_info(table_id="TAB4711")
-3. scb_opendata_mcp_get_table_data(table_id="TAB4711", filters={"bostadstyp": "småhus", "år": "2024"})
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB4711")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB4711")
+4. scb_opendata_mcp_get_table_data(table_id="TAB4711", selection=[
+    {"variableCode": "bostadstyp", "valueCodes": ["småhus"]},
+    {"variableCode": "år", "valueCodes": ["2024"]}
+])
 ```
 
 ### Analyze Construction Cost Trends
 ```
 1. scb_opendata_mcp_search_tables(query="construction costs", lang="en")
-2. scb_opendata_mcp_get_table_info(table_id="TAB4410")
-3. scb_opendata_mcp_get_table_data(table_id="TAB4410", filters={"byggnadstyp": "bostadshus", "år": "2020-2024"})
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB4410")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB4410")
+4. scb_opendata_mcp_get_table_data(table_id="TAB4410", selection=[
+    {"variableCode": "byggnadstyp", "valueCodes": ["bostadshus"]},
+    {"variableCode": "år", "valueCodes": ["2020", "2021", "2022", "2023", "2024"]}
+])
 ```
 
 ### Compare Property Taxes Across Municipalities
 ```
 1. scb_opendata_mcp_search_tables(query="property taxes", lang="en")
-2. scb_opendata_mcp_get_table_info(table_id="TAB4711")
-3. scb_opendata_mcp_get_codelist(codescb_opendata_mcp_list_id="Kommun")
-4. scb_opendata_mcp_get_table_data(table_id="TAB4711", filters={"kommun": "0180,0140", "år": "2024"})
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB4711")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB4711")
+4. scb_opendata_mcp_get_table_data(table_id="TAB4711", selection=[
+    {"variableCode": "kommun", "valueCodes": ["0180", "0140"]},
+    {"variableCode": "år", "valueCodes": ["2024"]}
+])
 ```
 
 ### Examine Housing Market Indicators
 ```
 1. scb_opendata_mcp_search_tables(query="housing market", lang="en")
-2. scb_opendata_mcp_get_table_info(table_id="TAB4711")
-3. scb_opendata_mcp_get_table_data(table_id="TAB4711", filters={"region": "01", "år": "2024", "kvartal": "K1-K4"})
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB4711")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB4711")
+4. scb_opendata_mcp_get_table_data(table_id="TAB4711", selection=[
+    {"variableCode": "region", "valueCodes": ["01"]},
+    {"variableCode": "år", "valueCodes": ["2024"]},
+    {"variableCode": "kvartal", "valueCodes": ["K1", "K2", "K3", "K4"]}
+])
 ```
 
 ### Analyze Construction Activity by Building Type
 ```
 1. scb_opendata_mcp_search_tables(query="building permits", lang="en")
-2. scb_opendata_mcp_get_table_info(table_id="TAB513")
-3. scb_opendata_mcp_get_codelist(codescb_opendata_mcp_list_id="Byggnadstyp")
-4. scb_opendata_mcp_get_table_data(table_id="TAB513", filters={"byggnadstyp": "bostadshus,icke-bostadshus", "år": "2024"})
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB513")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB513")
+4. scb_opendata_mcp_get_table_data(table_id="TAB513", selection=[
+    {"variableCode": "byggnadstyp", "valueCodes": ["bostadshus", "icke-bostadshus"]},
+    {"variableCode": "år", "valueCodes": ["2024"]}
+])
 ```

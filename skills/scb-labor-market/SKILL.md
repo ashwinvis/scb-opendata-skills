@@ -21,59 +21,101 @@ This skill provides workflows for accessing Statistics Sweden's comprehensive la
 ### Find Current Employment Statistics by Sector
 ```
 1. scb_opendata_mcp_search_tables(query="employment", lang="en")
-2. scb_opendata_mcp_get_table_info(table_id="TAB4707")
-3. scb_opendata_mcp_get_table_data(table_id="TAB4707", filters={"sektor": "privat", "månad": "2025M12"})
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB4707")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB4707")
+4. scb_opendata_mcp_get_table_data(table_id="TAB4707", selection=[
+    {"variableCode": "sektor", "valueCodes": ["privat"]},
+    {"variableCode": "månad", "valueCodes": ["2025M12"]}
+])
 ```
 
 ### Compare Wages Across Public and Private Sectors
 ```
 1. scb_opendata_mcp_search_tables(query="wages", lang="en")
 2. scb_opendata_mcp_get_table_metadata(table_id="TAB6047")
-3. scb_opendata_mcp_get_table_data(table_id="TAB6047", filters={"sektor": "privat", "år": "2024"})
-4. scb_opendata_mcp_get_table_data(table_id="TAB6047", filters={"sektor": "offentlig", "år": "2024"})
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB6047")
+4. scb_opendata_mcp_get_table_data(table_id="TAB6047", selection=[
+    {"variableCode": "sektor", "valueCodes": ["privat"]},
+    {"variableCode": "år", "valueCodes": ["2024"]}
+])
+5. scb_opendata_mcp_get_table_data(table_id="TAB6047", selection=[
+    {"variableCode": "sektor", "valueCodes": ["offentlig"]},
+    {"variableCode": "år", "valueCodes": ["2024"]}
+])
 ```
 
 ### Analyze Working Hours Trends by Industry
 ```
 1. scb_opendata_mcp_search_tables(query="working hours", lang="en")
-2. scb_opendata_mcp_get_table_info(table_id="TAB5191")
-3. scb_opendata_mcp_get_table_data(table_id="TAB5191", filters={"sektor": "privat", "näringsgren": "C", "kvartal": "2024K4"})
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB5191")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB5191")
+4. scb_opendata_mcp_get_table_data(table_id="TAB5191", selection=[
+    {"variableCode": "sektor", "valueCodes": ["privat"]},
+    {"variableCode": "näringsgren", "valueCodes": ["C"]},
+    {"variableCode": "kvartal", "valueCodes": ["2024K4"]}
+])
 ```
 
 ### Retrieve Labor Cost Index for Economic Analysis
 ```
 1. scb_opendata_mcp_search_tables(query="labor cost", lang="en")
-2. scb_opendata_mcp_get_table_info(table_id="TAB68")
-3. scb_opendata_mcp_get_table_data(table_id="TAB68", filters={"år": "2024", "kvartal": "K4"})
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB68")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB68")
+4. scb_opendata_mcp_get_table_data(table_id="TAB68", selection=[
+    {"variableCode": "år", "valueCodes": ["2024"]},
+    {"variableCode": "kvartal", "valueCodes": ["K4"]}
+])
 ```
 
 ### Compare Employment by Gender and Region
 ```
 1. scb_opendata_mcp_search_tables(query="employment", lang="en")
-2. scb_opendata_mcp_get_table_info(table_id="TAB4718")
-3. scb_opendata_mcp_get_codelist(codescb_opendata_mcp_list_id="Region")
-4. scb_opendata_mcp_get_table_data(table_id="TAB4718", filters={"kön": "1", "region": "01", "år": "2024"})
-5. scb_opendata_mcp_get_table_data(table_id="TAB4718", filters={"kön": "2", "region": "01", "år": "2024"})
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB4718")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB4718")
+4. scb_opendata_mcp_get_table_data(table_id="TAB4718", selection=[
+    {"variableCode": "kön", "valueCodes": ["1"]},
+    {"variableCode": "region", "valueCodes": ["01"]},
+    {"variableCode": "år", "valueCodes": ["2024"]}
+])
+5. scb_opendata_mcp_get_table_data(table_id="TAB4718", selection=[
+    {"variableCode": "kön", "valueCodes": ["2"]},
+    {"variableCode": "region", "valueCodes": ["01"]},
+    {"variableCode": "år", "valueCodes": ["2024"]}
+])
 ```
 
-### Analyze Sickness Absence Patterns
+### Analyze Sickness Absence Trends by Sector
 ```
-1. scb_opendata_mcp_search_tables(query="sickness", lang="en")
-2. scb_opendata_mcp_get_table_info(table_id="TAB6458")
-3. scb_opendata_mcp_get_table_data(table_id="TAB6458", filters={"sektor": "privat", "år": "2024", "kvartal": "K1-K4"})
+1. scb_opendata_mcp_search_tables(query="sickness absence", lang="en")
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB6458")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB6458")
+4. scb_opendata_mcp_get_table_data(table_id="TAB6458", selection=[
+    {"variableCode": "sektor", "valueCodes": ["privat"]},
+    {"variableCode": "år", "valueCodes": ["2024"]},
+    {"variableCode": "kvartal", "valueCodes": ["K1", "K2", "K3", "K4"]}
+])
 ```
 
-### Examine Employment Flow and Turnover
+### Examine Employment Flow Statistics
 ```
 1. scb_opendata_mcp_search_tables(query="employment flow", lang="en")
-2. scb_opendata_mcp_get_table_info(table_id="TAB6012")
-3. scb_opendata_mcp_get_table_data(table_id="TAB6012", filters={"kön": "1+2", "storleksklass": "10-49", "år": "2024"})
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB6012")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB6012")
+4. scb_opendata_mcp_get_table_data(table_id="TAB6012", selection=[
+    {"variableCode": "kön", "valueCodes": ["1+2"]},
+    {"variableCode": "storleksklass", "valueCodes": ["10-49"]},
+    {"variableCode": "år", "valueCodes": ["2024"]}
+])
 ```
 
-### Retrieve Industry-Specific Employment Data
+### Analyze Employment Trends by Industry
 ```
 1. scb_opendata_mcp_search_tables(query="employment", lang="en")
-2. scb_opendata_mcp_get_table_info(table_id="TAB4723")
-3. scb_opendata_mcp_get_codelist(codescb_opendata_mcp_list_id="SNI2007")
-4. scb_opendata_mcp_get_table_data(table_id="TAB4723", filters={"näringsgren": "C", "år": "2024", "månad": "M12"})
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB4723")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB4723")
+4. scb_opendata_mcp_get_table_data(table_id="TAB4723", selection=[
+    {"variableCode": "näringsgren", "valueCodes": ["C"]},
+    {"variableCode": "år", "valueCodes": ["2024"]},
+    {"variableCode": "månad", "valueCodes": ["M12"]}
+])
 ```

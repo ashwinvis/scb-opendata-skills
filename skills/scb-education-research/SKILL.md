@@ -22,56 +22,87 @@ This skill provides workflows for accessing Statistics Sweden's education and re
 ### Retrieve Primary School Statistics
 ```
 1. scb_opendata_mcp_search_tables(query="schools", lang="en")
-2. scb_opendata_mcp_get_table_info(table_id="TAB2107")
-3. scb_opendata_mcp_get_table_data(table_id="TAB2107", filters={"skoltyp": "grundskola", "år": "2024"})
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB2107")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB2107")
+4. scb_opendata_mcp_get_table_data(table_id="TAB2107", selection=[
+    {"variableCode": "skoltyp", "valueCodes": ["grundskola"]},
+    {"variableCode": "år", "valueCodes": ["2024"]}
+])
 ```
 
 ### Analyze University Enrollment Trends
 ```
 1. scb_opendata_mcp_search_tables(query="universities", lang="en")
-2. scb_opendata_mcp_get_table_info(table_id="TAB1302")
-3. scb_opendata_mcp_get_table_data(table_id="TAB1302", filters={"utbildningsområde": "STEM,humaniora", "år": "2020-2024"})
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB1302")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB1302")
+4. scb_opendata_mcp_get_table_data(table_id="TAB1302", selection=[
+    {"variableCode": "utbildningsområde", "valueCodes": ["STEM", "humaniora"]},
+    {"variableCode": "år", "valueCodes": ["2020", "2021", "2022", "2023", "2024"]}
+])
 ```
 
 ### Examine R&D Expenditures by Sector
 ```
 1. scb_opendata_mcp_search_tables(query="R&D", lang="en")
-2. scb_opendata_mcp_get_table_info(table_id="TAB5798")
-3. scb_opendata_mcp_get_table_data(table_id="TAB5798", filters={"sektor": "företag,högskola,stat", "år": "2024"})
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB5798")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB5798")
+4. scb_opendata_mcp_get_table_data(table_id="TAB5798", selection=[
+    {"variableCode": "sektor", "valueCodes": ["företag", "högskola", "stat"]},
+    {"variableCode": "år", "valueCodes": ["2024"]}
+])
 ```
 
 ### Retrieve Innovation Statistics for Business Sector
 ```
 1. scb_opendata_mcp_search_tables(query="innovation", lang="en")
-2. scb_opendata_mcp_get_table_info(table_id="TAB3780")
-3. scb_opendata_mcp_get_table_data(table_id="TAB3780", filters={"näringsgren": "tillverkning,tjänster", "år": "2024"})
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB3780")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB3780")
+4. scb_opendata_mcp_get_table_data(table_id="TAB3780", selection=[
+    {"variableCode": "näringsgren", "valueCodes": ["tillverkning", "tjänster"]},
+    {"variableCode": "år", "valueCodes": ["2024"]}
+])
 ```
 
 ### Analyze Adult Education Participation
 ```
 1. scb_opendata_mcp_search_tables(query="adult education", lang="en")
-2. scb_opendata_mcp_get_table_info(table_id="TAB325")
-3. scb_opendata_mcp_get_table_data(table_id="TAB325", filters={"åldersgrupp": "25-44,45-64", "år": "2024"})
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB325")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB325")
+4. scb_opendata_mcp_get_table_data(table_id="TAB325", selection=[
+    {"variableCode": "åldersgrupp", "valueCodes": ["25-44", "45-64"]},
+    {"variableCode": "år", "valueCodes": ["2024"]}
+])
 ```
 
 ### Examine Educational Outcomes and Graduation Rates
 ```
 1. scb_opendata_mcp_search_tables(query="schools", lang="en")
-2. scb_opendata_mcp_get_table_info(table_id="TAB2107")
-3. scb_opendata_mcp_get_table_data(table_id="TAB2107", filters={"utbildningsnivå": "sekundär,tertiär", "år": "2024"})
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB2107")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB2107")
+4. scb_opendata_mcp_get_table_data(table_id="TAB2107", selection=[
+    {"variableCode": "utbildningsnivå", "valueCodes": ["sekundär", "tertiär"]},
+    {"variableCode": "år", "valueCodes": ["2024"]}
+])
 ```
 
 ### Retrieve International Student Statistics
 ```
 1. scb_opendata_mcp_search_tables(query="universities", lang="en")
-2. scb_opendata_mcp_get_table_info(table_id="TAB1302")
-3. scb_opendata_mcp_get_table_data(table_id="TAB1302", filters={"ursprungsland": "EU,icke-EU", "år": "2024"})
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB1302")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB1302")
+4. scb_opendata_mcp_get_table_data(table_id="TAB1302", selection=[
+    {"variableCode": "ursprungsland", "valueCodes": ["EU", "icke-EU"]},
+    {"variableCode": "år", "valueCodes": ["2024"]}
+])
 ```
 
 ### Compare Education Performance Across Regions
 ```
 1. scb_opendata_mcp_search_tables(query="schools", lang="en")
-2. scb_opendata_mcp_get_table_info(table_id="TAB2107")
-3. scb_opendata_mcp_get_codelist(codescb_opendata_mcp_list_id="Region")
-4. scb_opendata_mcp_get_table_data(table_id="TAB2107", filters={"region": "01,02,03", "år": "2024"})
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB2107")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB2107")
+4. scb_opendata_mcp_get_table_data(table_id="TAB2107", selection=[
+    {"variableCode": "region", "valueCodes": ["01", "02", "03"]},
+    {"variableCode": "år", "valueCodes": ["2024"]}
+])
 ```
