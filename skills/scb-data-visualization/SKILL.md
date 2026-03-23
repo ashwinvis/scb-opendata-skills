@@ -9,21 +9,13 @@ This skill generates Python scripts that fetch data from Statistics Sweden (SCB)
 
 ## Sample Table IDs for demonstrating visualization
 
-- **Business Economy**: TAB6017 (business statistics), TAB2844 (investments), TAB3780 (innovation)
-- **Environment**: TAB5055 (environmental indicators), TAB3571 (energy), TAB2496 (children's working environment)
-- **Housing**: TAB513 (construction), TAB4384 (housing types), TAB4196 (completed dwellings)
-- **Education**: TAB4879 (life tables by education), TAB1302 (students), TAB5798 (research)
-- **International Trade**: TAB5440 (trade), TAB1630 (electronics), TAB6695 (services)
+- **Environment**: TAB2844 (environmental protection investments indicators)
 
 ## Available Scripts
 
 The following example Python scripts are available in the `scripts/` directory:
 
-- **`scripts/plot_enterprises_trend.py`** — Basic template showing enterprise count trends using TAB6017
-- **`scripts/plot_health_expenditure.py`** — Advanced script comparing health care expenditure by function using TAB5055
-- **`scripts/plot_air_protection_investments.py`** — Script with data validation showing environmental investments using TAB2844
-- **`scripts/plot_housing_comparison.py`** — Housing data comparison by region and type using TAB4384 and TAB4196
-- **`scripts/plot_regional_dashboard.py`** — Multi-indicator regional dashboard using TAB6017, TAB5055, and TAB513
+- **`scripts/plot_environmental_protection_investments.py`** — Script plotting bar chart based on data on environmental investments using TAB2844
 
 ## Workflow
 
@@ -71,12 +63,9 @@ Windows:
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-
 ## Guidelines
 
-- **Table ID Hardcoding**: Scripts use hardcoded table IDs but fetch live data
+- **Hardcode Table IDs only, not raw table data**: Scripts use hardcoded table IDs but fetch live data. Avoid embedding raw data in the scripts.
 - **API Integration**: Uses scb_opendata_mcp server tools for data retrieval
 - **Data Validation**: Optional validation using Pydantic models
-- **Pandas Integration**: Data transformation and analysis
-- **Visualization**: Matplotlib and Seaborn for professional charts
-- **Dependency Management**: Clear dependency declarations for easy execution
+- **Dependency Management**: Clear dependency declarations for easy execution in the top of the script.
