@@ -14,14 +14,6 @@ Skills are self-contained folders that package instructions, workflows, and reso
 
 SCB Open Data skills are compatible with various coding agent frameworks that support the Agent Skills standard.
 
-### Using with SCB Open Data MCP Server
-
-1. Ensure you have the [SCB Open Data MCP Server] running
-2. Register this skills repository with your coding agent
-3. Install specific skills as needed for your statistical analysis tasks
-
-## Configuration for common agent harnesses
-
 ### Generic instructions
 
 1. Clone this repository:
@@ -32,17 +24,6 @@ SCB Open Data skills are compatible with various coding agent frameworks that su
 2. Symlink or copy skill folders to your agent's skills directory
 3. Ensure your agent is configured to connect to the [SCB Open Data MCP Server].
 
-> [!note]
-> FIXME: add specific instructions for Claude Code
-
-### Mistral Vibe
-
-In `~/.vibe/config.toml` or `~/.vibe/agents/name_of_agent.toml`:
-
-```toml
-skill_paths = ["/path/to/scb-opendata-skills/skills"]
-enabled_skills = ["scb-*"]
-```
 
 ## Skills
 
@@ -55,6 +36,7 @@ This repository contains skills organized by statistical domain, covering all ma
 | Name | Description | Documentation |
 |------|-------------|---------------|
 | `scb-business-economy` | Workflows for business and economic data including industry statistics, IT usage, and economic performance | [SKILL.md](skills/scb-business-economy/SKILL.md) |
+| `scb-data-visualization` | Generate Python scripts for fetching SCB table data and creating visualizations using matplotlib and seaborn | [SKILL.md](skills/scb-data-visualization/SKILL.md) |
 | `scb-education-research` | Workflows for education and research data covering schools, universities, and R&D statistics | [SKILL.md](skills/scb-education-research/SKILL.md) |
 | `scb-environment` | Workflows for environmental data including climate indicators, energy consumption, and sustainability metrics | [SKILL.md](skills/scb-environment/SKILL.md) |
 | `scb-housing-construction` | Workflows for housing and construction data covering real estate, building permits, and construction statistics | [SKILL.md](skills/scb-housing-construction/SKILL.md) |
