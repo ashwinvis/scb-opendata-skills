@@ -17,42 +17,6 @@ This skill provides workflows for accessing Statistics Sweden's energy and elect
 
 ## Use Cases & Examples
 
-### Analyze Energy Consumption by Source
-
-```
-1. scb_opendata_mcp_search_tables(query="energy", lang="en")
-2. scb_opendata_mcp_get_table_metadata(table_id="TAB6399")
-3. scb_opendata_mcp_get_table_default_selection(table_id="TAB6399")
-4. scb_opendata_mcp_get_table_data(table_id="TAB6399", selection=[
-    {"variableCode": "AnvOmrade", "valueCodes": ["Tot", "Exp"]},
-    {"variableCode": "Tid", "valueCodes": ["2025M01"]}
-])
-```
-
-### Examine Electricity Production Statistics
-
-```
-1. scb_opendata_mcp_search_tables(query="electricity", lang="en")
-2. scb_opendata_mcp_get_table_metadata(table_id="TAB5644")
-3. scb_opendata_mcp_get_table_default_selection(table_id="TAB5644")
-4. scb_opendata_mcp_get_table_data(table_id="TAB5644", selection=[
-    {"variableCode": "Produktionsslag", "valueCodes": ["Total", "Vattenkraft", "Vindkraft"]},
-    {"variableCode": "Tid", "valueCodes": ["2025M01"]}
-])
-```
-
-### Compare Energy Consumption Across Sectors
-
-```
-1. scb_opendata_mcp_search_tables(query="energy", lang="en")
-2. scb_opendata_mcp_get_table_metadata(table_id="TAB6399")
-3. scb_opendata_mcp_get_table_default_selection(table_id="TAB6399")
-4. scb_opendata_mcp_get_table_data(table_id="TAB6399", selection=[
-    {"variableCode": "AnvOmrade", "valueCodes": ["ElGasVärm", "JärnSpårBuss", "Bosts"]},
-    {"variableCode": "Tid", "valueCodes": ["2025M01"]}
-])
-```
-
 ### Analyze Renewable Energy Trends
 
 ```
@@ -65,26 +29,14 @@ This skill provides workflows for accessing Statistics Sweden's energy and elect
 ])
 ```
 
-### Examine Energy Production by Region
+### Examine Electricity Production Statistics
 
 ```
-1. scb_opendata_mcp_search_tables(query="energy", lang="en")
-2. scb_opendata_mcp_get_table_metadata(table_id="TAB1010")
-3. scb_opendata_mcp_get_table_default_selection(table_id="TAB1010")
-4. scb_opendata_mcp_get_table_data(table_id="TAB1010", selection=[
-    {"variableCode": "Prodslag", "valueCodes": ["Tot", "Vattenkraft", "Karnkraft"]},
-    {"variableCode": "Tid", "valueCodes": ["2024"]}
-])
-```
-
-### Compare Fossil vs Renewable Energy Consumption
-
-```
-1. scb_opendata_mcp_search_tables(query="energy", lang="en")
-2. scb_opendata_mcp_get_table_metadata(table_id="TAB6399")
-3. scb_opendata_mcp_get_table_default_selection(table_id="TAB6399")
-4. scb_opendata_mcp_get_table_data(table_id="TAB6399", selection=[
-    {"variableCode": "AnvOmrade", "valueCodes": ["ElGasVärm", "JärnSpårBuss", "Bosts"]},
-    {"variableCode": "Tid", "valueCodes": ["2025M01", "2025M02", "2025M03"]}
+1. scb_opendata_mcp_search_tables(query="electricity", lang="en")
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB5644")
+3. scb_opendata_mcp_get_table_default_selection(table_id="TAB5644")
+4. scb_opendata_mcp_get_table_data(table_id="TAB5644", selection=[
+    {"variableCode": "Produktionsslag", "valueCodes": ["Total", "Vattenkraft", "Vindkraft"]},
+    {"variableCode": "Tid", "valueCodes": ["2025M01"]}
 ])
 ```

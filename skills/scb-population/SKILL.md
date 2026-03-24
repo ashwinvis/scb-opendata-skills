@@ -18,43 +18,6 @@ This skill provides workflows for accessing Statistics Sweden's population data,
 
 ## Use Cases & Examples
 
-### Retrieve Current Population Statistics by Region
-```
-1. scb_opendata_mcp_search_tables(query="population", lang="en")
-2. scb_opendata_mcp_get_table_metadata(table_id="TAB6008")
-3. scb_opendata_mcp_get_table_default_selection(table_id="TAB6008")
-4. scb_opendata_mcp_get_table_data(table_id="TAB6008", selection=[
-    {"variableCode": "region", "valueCodes": ["01"]},
-    {"variableCode": "år", "valueCodes": ["2024"]}
-])
-```
-
-### Analyze Birth Trends Over Time
-```
-1. scb_opendata_mcp_search_tables(query="births", lang="en")
-2. scb_opendata_mcp_get_table_metadata(table_id="TAB5959")
-3. scb_opendata_mcp_get_table_default_selection(table_id="TAB5959")
-4. scb_opendata_mcp_get_table_data(table_id="TAB5959", selection=[
-    {"variableCode": "år", "valueCodes": ["2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"]},
-    {"variableCode": "månad", "valueCodes": ["M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12"]}
-])
-```
-
-### Examine Mortality Rates by Age Group
-```
-1. scb_opendata_mcp_search_tables(query="deaths", lang="en")
-2. scb_opendata_mcp_get_table_metadata(table_id="TAB5958")
-3. scb_opendata_mcp_get_table_default_selection(table_id="TAB5958")
-4. scb_opendata_mcp_get_table_data(table_id="TAB5958", selection=[
-    {"variableCode": "ålder", "valueCodes": ["0-14"]},
-    {"variableCode": "år", "valueCodes": ["2024"]}
-])
-5. scb_opendata_mcp_get_table_data(table_id="TAB5958", selection=[
-    {"variableCode": "ålder", "valueCodes": ["65+"]},
-    {"variableCode": "år", "valueCodes": ["2024"]}
-])
-```
-
 ### Retrieve Population Projections for Planning
 ```
 1. scb_opendata_mcp_search_tables(query="population projections", lang="en")
@@ -74,42 +37,5 @@ This skill provides workflows for accessing Statistics Sweden's population data,
 4. scb_opendata_mcp_get_table_data(table_id="TAB698", selection=[
     {"variableCode": "flyttningstyp", "valueCodes": ["inflyttning"]},
     {"variableCode": "år", "valueCodes": ["2024"]}
-])
-```
-
-### Examine Household Composition Statistics
-```
-1. scb_opendata_mcp_search_tables(query="households", lang="en")
-2. scb_opendata_mcp_get_table_metadata(table_id="TAB4374")
-3. scb_opendata_mcp_get_table_default_selection(table_id="TAB4374")
-4. scb_opendata_mcp_get_table_data(table_id="TAB4374", selection=[
-    {"variableCode": "hushållstyp", "valueCodes": ["ensam"]},
-    {"variableCode": "år", "valueCodes": ["2024"]}
-])
-```
-
-### Compare Population Trends Across Regions
-```
-1. scb_opendata_mcp_search_tables(query="population", lang="en")
-2. scb_opendata_mcp_get_table_metadata(table_id="TAB6008")
-3. scb_opendata_mcp_get_table_default_selection(table_id="TAB6008")
-4. scb_opendata_mcp_get_table_data(table_id="TAB6008", selection=[
-    {"variableCode": "region", "valueCodes": ["01"]},
-    {"variableCode": "år", "valueCodes": ["2020", "2024"]}
-])
-5. scb_opendata_mcp_get_table_data(table_id="TAB6008", selection=[
-    {"variableCode": "region", "valueCodes": ["02"]},
-    {"variableCode": "år", "valueCodes": ["2020", "2024"]}
-])
-```
-
-### Analyze Demographic Changes Over Time
-```
-1. scb_opendata_mcp_search_tables(query="population", lang="en")
-2. scb_opendata_mcp_get_table_metadata(table_id="TAB698")
-3. scb_opendata_mcp_get_table_default_selection(table_id="TAB698")
-4. scb_opendata_mcp_get_table_data(table_id="TAB698", selection=[
-    {"variableCode": "år", "valueCodes": ["1990", "2000", "2010", "2020"]},
-    {"variableCode": "ålder", "valueCodes": ["0-14", "15-64", "65+"]}
 ])
 ```

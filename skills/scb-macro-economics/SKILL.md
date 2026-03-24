@@ -39,16 +39,3 @@ This skill provides workflows for accessing Statistics Sweden's macroeconomics d
     {"variableCode": "Tid", "valueCodes": ["2007M01", "2007M02", "2007M03"]}
 ])
 ```
-
-### Compare Economic Indicators
-
-```
-1. scb_opendata_mcp_search_tables(query="economic indicators", lang="en")
-2. scb_opendata_mcp_get_table_metadata(table_id="TAB3610")
-3. scb_opendata_mcp_get_table_default_selection(table_id="TAB3610")
-4. scb_opendata_mcp_get_table_data(table_id="TAB3610", selection=[
-    {"variableCode": "Anvandningstyp", "valueCodes": ["BNPM"]},
-    {"variableCode": "ContentsCode", "valueCodes": ["000000RQ"]},
-    {"variableCode": "Tid", "valueCodes": ["2020", "2021", "2022", "2023"]}
-])
-```
