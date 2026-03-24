@@ -45,6 +45,8 @@ This repository contains skills organized by statistical domain, covering all ma
 | `scb-living-conditions` | Workflows for living conditions data including income, education, health, and social statistics | [SKILL.md](skills/scb-living-conditions/SKILL.md) |
 | `scb-opendata-mcp-workflows` | Core workflows and use cases for the SCB Open Data MCP server interface | [SKILL.md](skills/scb-opendata-mcp-workflows/SKILL.md) |
 | `scb-population` | Workflows for population data including demographics, births, deaths, and population projections | [SKILL.md](skills/scb-population/SKILL.md) |
+| `scb-energy-electricity` | Workflows and use cases for SCB Energy and Electricity tables covering energy consumption, production, and electricity statistics | [SKILL.md](skills/scb-energy-electricity/SKILL.md) |
+| `scb-macro-economics` | Workflows and use cases for SCB Macroeconomics tables covering GDP, inflation (CPI), and economic indicators | [SKILL.md](skills/scb-macro-economics/SKILL.md) |
 <!-- END_SKILLS_TABLE -->
 
 ### Using Skills in Your Coding Agent
