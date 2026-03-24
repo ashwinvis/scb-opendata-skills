@@ -1,6 +1,6 @@
 ---
 name: scb-opendata-mcp-workflows
-description: Use cases and workflows to show how to invoke a tool, or chain multiple tools. Tools are available either via stdio or via HTTP requests when connected to the MCP server scb_opendata_mcp. 
+description: Use cases and workflows to show how to invoke a tool, or chain multiple tools. Tools are available when connected to the MCP server scb_opendata_mcp. This skill helps with finding statistical data, comparing data across regions, saving and retrieving common queries, exploring available codelists, getting detailed metadata for a table, searching and retrieving data with pagination, and aggregating data using codelists.
 ---
 
 # SCB Open-data MCP server
@@ -9,7 +9,7 @@ MCP server which provides tool calls to interface with Statistics Sweden's API.
 
 ## Use Cases & Examples
 
-### Find Employment Data for Stockholm
+### Find Statistical Data for a Specific Region
 
 ```
 1. scb_opendata_mcp_search_tables(query="employment", lang="en")
@@ -21,7 +21,7 @@ MCP server which provides tool calls to interface with Statistics Sweden's API.
 ])
 ```
 
-### Compare Employment Data Across Regions
+### Compare Statistical Data Across Regions
 
 ```
 1. scb_opendata_mcp_search_tables(query="employment", lang="en")
@@ -66,7 +66,7 @@ MCP server which provides tool calls to interface with Statistics Sweden's API.
 2. scb_opendata_mcp_get_table_default_selection(table_id="TAB4707")
 ```
 
-### Search and Retrieve Data with Pagination
+### Search and Retrieve Statistical Data with Pagination
 
 ```
 1. scb_opendata_mcp_search_tables(query="wage", lang="en", page_size=20)
@@ -77,7 +77,7 @@ MCP server which provides tool calls to interface with Statistics Sweden's API.
 ])
 ```
 
-### Retrieve Population Data by Age and Sex
+### Retrieve Statistical Data by Age and Sex
 
 ```
 1. scb_opendata_mcp_search_tables(query="population", lang="en")
@@ -89,7 +89,7 @@ MCP server which provides tool calls to interface with Statistics Sweden's API.
 ])
 ```
 
-### Analyze Labor Costs Across Different Sectors
+### Analyze Statistical Data Across Different Sectors
 
 ```
 1. scb_opendata_mcp_search_tables(query="labor cost", lang="en")
@@ -98,5 +98,19 @@ MCP server which provides tool calls to interface with Statistics Sweden's API.
 4. scb_opendata_mcp_get_table_data(table_id="TAB68", selection=[
     {"variableCode": "sector", "valueCodes": ["private"]},
     {"variableCode": "year", "valueCodes": ["2023"]}
+])
+```
+
+### Aggregate Data Using Codelists
+
+```
+1. scb_opendata_mcp_search_tables(query="population", lang="en")
+2. scb_opendata_mcp_get_table_metadata(table_id="TAB4562")
+3. scb_opendata_mcp_list_codelists(table_id="TAB4562")
+4. scb_opendata_mcp_get_table_data(table_id="TAB4562", selection=[
+    {"variableCode": "Region", "codelist": "agg_RegionNUTS2_2008", "valueCodes": ["*"]},
+    {"variableCode": "Vattenanslutning", "valueCodes": ["10"]},
+    {"variableCode": "ContentsCode", "valueCodes": ["000000VP"]},
+    {"variableCode": "Tid", "valueCodes": ["2023"]}
 ])
 ```
